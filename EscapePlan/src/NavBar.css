@@ -1,0 +1,11 @@
+nav {
+    position: fixed;
+    top: 25%;
+    right: 95%;
+    writing-mode: vertical-lr;
+}
+
+li {
+    display: inline-block;
+    margin: 20px 0px;
+}
