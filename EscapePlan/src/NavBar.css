@@ -1,11 +1,5 @@
-nav {
-    position: fixed;
-    top: 25%;
-    right: 95%;
-    writing-mode: vertical-lr;
+/* NavBar.css */
+:root{
+    --clr-primary: #ffffff;
 }
 
-li {
-    display: inline-block;
-    margin: 20px 0px;
-}
