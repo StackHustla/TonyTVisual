@@ -10,7 +10,7 @@ function App() {
     <>
       <div className="d-flex m-3 p-3 justify-content-between align-items-center">
         <a href="">
-          <img src={Createdby} alt="Created By Tony T" />
+          <img src={Createdby} alt="Created By Tony T" /> {/* replace with font */}
         </a>
         <nav className="d-flex ">
           <a className="pe-4" href="">
