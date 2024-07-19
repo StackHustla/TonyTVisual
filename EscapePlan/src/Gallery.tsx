@@ -10,6 +10,7 @@ import IMG5 from "./assets/IMG5.jpg";
 import IMG6 from "./assets/IMG6.jpg";
 import IMG7 from "./assets/IMG7.jpg";
 import IMG8 from "./assets/IMG8.jpg";
+import { useState } from "react";
 
 type GalleryItem = {
   id: number;
@@ -17,7 +18,17 @@ type GalleryItem = {
 };
 
 const Gallery = () => {
-  const data: GalleryItem[] = [
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const handleImageClick = (imgSrc:string) => {
+    setSelectedImage(imgSrc);
+  };
+  
+  const handleClose = () =>{
+    setSelectedImage(null);
+  };
+
+    const data: GalleryItem[] = [
     {
       id: 1,
       imgSrc: BloomBloom,
@@ -67,44 +78,68 @@ const Gallery = () => {
       {/* Header img */}
       <div className="container">
         <div className="row mb-4"></div>
-        <div className="col-12 mb-4">
-          <img className="img-fluid w-100" src={Denial} alt="" />
+        <div className="col-12 mb-4 ">
+            <div className="gallery-item" onClick={() => handleImageClick(Denial)}>
+          <img className="img-fluid w-100 shadow " src={Denial} alt="" />
+            </div>
         </div>
       </div>
       <div className="container">
         <div className="row">
           {data.map((item) => (
             <div key={item.id} className="col-md-4 mb-4">
+                <div className="gallery-item" onClick={() => handleImageClick(item.imgSrc)}>
+
               <img
-                className="img-fluid"
+                className="img-fluid shadow"
                 src={item.imgSrc}
                 alt={"Gallery item ${item.id}"}
-              />
+                />
             </div>
+                </div>
           ))}
         </div>
       </div>
-      {/* bottom img */}
       <div className="container">
         <div className="col-12 mb-3">
-          <img className="img-fluid w-100" src={ABSPanel} alt="" />
+            <div className="gallery-item" onClick={() => handleImageClick(ABSPanel)}>
+          <img className="img-fluid w-100 shadow" src={ABSPanel} alt="" />
+            </div>
         </div>
       </div>
       <div className="container">
         <div className="row">
           <div className="col-6 mb-3">
-            <img className="img-fluid w-100" src={IMG7} alt="" />
+            <div className="gallery-item " onClick={() => handleImageClick(IMG7)}>
+            <img className="img-fluid w-100 shadow" src={IMG7} alt="" />
+            </div>
           </div>
           <div className="col-6 mb-3">
-            <img className="img-fluid w-100" src={IMG8} alt="" />
+            <div className="gallery-item" onClick={() => handleImageClick(IMG8)}>
+            <img className="img-fluid w-100 shadow" src={IMG8} alt="" />
+            </div>
           </div>
         </div>
       </div>
+      {/* bottom img */}
       <div className="container">
         <div className="col-12 mb-3">
-          <img className="img-fluid w-100" src={AppBrand} alt="" />
+            <div className="gallery-item" onClick={() => handleImageClick(AppBrand)}>
+          <img className="img-fluid w-100 shadow" src={AppBrand} alt="" />
+            </div>
         </div>
       </div>
+      {selectedImage && (
+        <div className="modal fade show d-block" tabIndex={-1} role="dialog" onClick={handleClose}>
+          <div className="modal-dialog modal-lg" role="document">
+            <div className="modal-content">
+              <div className="modal-body">
+                <img className="img-fluid w-100" src={selectedImage} alt="Enlarged" />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

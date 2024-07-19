@@ -22,6 +22,7 @@ function App() {
       <div>
         <Gallery />
       </div>
+      <div><footer></footer></div>
     </>
   );
 }
