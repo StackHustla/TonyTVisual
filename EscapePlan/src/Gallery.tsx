@@ -72,6 +72,9 @@ const Gallery = () => {
                 here!
               </a>{" "}
             </strong>
+            <div className="container d-flex m-2 justify-content-center text-center">
+              <h5>Please bare with me while I add more functionality and pieces to this site. I've been creating graphics for over 15 years. Thousands of projects. Kind of hard to choose a few. But it's getting done! </h5>
+            </div>
           </span>
         </h4>
       </div>
