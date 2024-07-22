@@ -1,7 +1,6 @@
 import "./App.css";
 import NavBar from "./navBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HeroSection from "./HeroSection";
 import Createdby from "./assets/CreatedBy.png";
 import Gallery from "./Gallery";
 

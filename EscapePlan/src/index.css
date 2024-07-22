@@ -11,17 +11,18 @@
 }
 
 
-
-
 a {
   /* change anchors */
   font-weight: 500;
   color: #000000;
   text-decoration: inherit;
+  transition: 0.3s ease-in-out;
+  
 }
 
 a:hover {
-  color: #000dff;
+  color: #c3ad04;
+  transform: scale(1.2);
 }
 
 body {
